@@ -1,5 +1,5 @@
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include <algorithm>
 using namespace std;
 
@@ -22,7 +22,7 @@ class Solution
 public:
     vector<int> findDiagonalOrder(vector<vector<int>> &mat)
     {
-        map<int, vector<int>> map;
+        unordered_map<int, vector<int>> map;
         int m = mat.size();
         int n = mat[0].size();
 
@@ -31,20 +31,21 @@ public:
             for (int j = 0; j < n; j++) // -> n
             {
                 int key = i + j;
-                map[key].push_back(mat[i][j]); // log (m + n)
+                map[key].push_back(mat[i][j]);
             }
         }
         vector<int> ans;
-        for (auto &[key, vec] : map) // -> O(m + n)
+        int size = map.size();
+        for (int i = 0; i < size; i++)
         {
-            if (key % 2 == 0)
-            {
-                reverse(vec.begin(), vec.end()); // -> O(m)
-            }
-            ans.insert(ans.end(), vec.begin(), vec.end()); // O(n)
+            if (i % 2 == 0)
+                reverse(map[i].begin(), map[i].end());           // -> O(m)
+            ans.insert(ans.end(), map[i].begin(), map[i].end()); // O(n)
         }
+
         return ans;
     }
 };
-// T.C : O(m * n * log(m + n) + (m + n) * m)
+
+// T.C : O(m * n + (m + n) * m)
 // S.C : O(m * n)
