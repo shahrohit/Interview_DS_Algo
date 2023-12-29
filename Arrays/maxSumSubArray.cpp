@@ -49,11 +49,8 @@ public:
         int currSum = 0;
         for (auto &num : nums)
         {
-            currSum += num;
+            currSum = max(currSum + num, num);
             maxSum = max(maxSum, currSum);
-
-            if (currSum < 0)
-                currSum = 0;
         }
         return maxSum;
     }
