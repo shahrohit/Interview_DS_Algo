@@ -7,7 +7,7 @@ using namespace std;
 // LeetCode No : 556
 // Difficulty : Medium
 // Topics : Math, string
-// Link : https://leetcode.com/problems/majority-element-ii/description/
+// Link : https://leetcode.com/problems/next-greater-element-iii/description/
 
 // ----------------------- Problem Statement --------------------------------------
 // Given a positive integer n, find the smallest integer which has exactly the same digits existing in the integer n and is greater in value than n.
