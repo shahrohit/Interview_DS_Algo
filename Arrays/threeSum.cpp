@@ -7,7 +7,7 @@ using namespace std;
 // LeetCode No : 15
 // Difficulty : Medium
 // Topics : Array, Two Pointers, Sorting
-// Link : https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+// Link : https://leetcode.com/problems/3sum/
 
 // ----------------------- Problem Statement --------------------------------------
 // Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
